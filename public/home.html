@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app = "searchModule">
+  <header>
+      <title>
+        night-life search
+      </title>
+      <link href="/public/css/main.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src = "public/Scripts/angular.min.js"></script>
+  </header>
+
+  <body ng-controller = "searchController">
+    <div class = "">
+      <div class = "div-app-name">
+        <h1>Night Life</h1>
+      </div>
+      <div class = "div-app-image">
+        <img src = "" alt = "image1"/>
+        <img src = "" alt = "image2" />
+        <img src = "" alt = "image3" />
+      </div>
+      <div class = "div-app-desc">
+          <p>Going out!, see who is going out tonight and same place</p>
+      </div>
+
+      <div class = "div-search-text">
+        <input type = "text" hint = "search places" class = "input-search-text"/>
+        <input type = "button" value = "search" class = "search-btn" />
+      </div>
+
+      <div class = "search-list">
+        <ol class = "ol-search-text">
+          <li class = "li-search-item">
+            <div class = "search-item">
+              <img src = "" alt = "image4" />
+              <input type = "button" class = "search-btn" value = "join"/>
+            </div>
+            <div class = "div-search-desc"> Description will display at this place</div>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script type="text/javascript" src = "controller/controller-client.js"></script>
+  </body>
+
+  <footer>
+  </footer>
+</html>
