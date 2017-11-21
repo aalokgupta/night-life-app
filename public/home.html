@@ -6,37 +6,47 @@
       </title>
       <link href="/public/css/main.css" rel="stylesheet" type="text/css">
      <script type="text/javascript" src = "public/Scripts/angular.min.js"></script>
+     <script type="text/javascript" src = "public/Scripts/angular-local-storage.js"></script>
   </header>
 
-  <body ng-controller = "searchController">
-    <div class = "">
+  <body>
+    <div class = "screenConfig" ng-controller = "searchController">
       <div class = "div-app-name">
-        <h1>Night Life</h1>
+        <h1>Going out!</h1>
       </div>
       <div class = "div-app-image">
-        <img src = "" alt = "image1"/>
-        <img src = "" alt = "image2" />
-        <img src = "" alt = "image3" />
+        <img src = "/public/img/image1.png" alt = "image1"/>
+        <img src = "/public/img/image2.png" alt = "image2" />
+        <img src = "/public/img/image3.png" alt = "image3" />
       </div>
       <div class = "div-app-desc">
-          <p>Going out!, see who is going out tonight and same place</p>
+          <p>Wanna join your firend ?  see who is going outside and join them... </p>
       </div>
 
       <div class = "div-search-text">
-        <input type = "text" hint = "search places" class = "input-search-text"/>
-        <input type = "button" value = "search" class = "search-btn" />
+        <input type = "text" hint = "search places" class = "input-search-text" ng-click = "onClickSearchText()" value = "{{searchText}}" />
+        <input type = "button" value = "search" ng-click = "getSearchResult()" class = "search-btn" />
       </div>
-
-      <div class = "search-list">
-        <ol class = "ol-search-text">
-          <li class = "li-search-item">
+<!-- {{}} -->
+      <div class = "search-list" >
+        <ol class = "ol-search-text" style = "list-style-type: none;" ng-repeat = "searchItem in searchItems">
+            <li class = "li-search-item">
             <div class = "search-item">
-              <img src = "" alt = "image4" />
-              <input type = "button" class = "search-btn" value = "join"/>
+              <img src = "{{ searchItem.imageLink }}"  alt = "image4" />
+              <p style = "display: inline-block" class = "div-name"> {{searchItem.placeName}} </p>
+              <a href = "/auth/twitter">
+              <input type = "button"  ng-click = "clickOnJoining(searchItem, $index)" value = "joining {{ searchItem.counter }}" class = "search-btn"/>
+            </a>
             </div>
-            <div class = "div-search-desc"> Description will display at this place</div>
+            <div class = "div-search-desc"> Address:-  {{ searchItem.placeDesc }}</div>
           </li>
         </ol>
+        <footer>
+          <div class = "footerdiv">Join me on</div>
+           <a href = "https://github.com/aalokgupta/" class = "footerdiv">   GitHub, </a>
+           <a href = "https://www.quora.com/profile/Aalok-Kumar-Gupta"  class = "footerdiv"> Quora </a></br>
+          <div class = "footerdiv">Developed by @@lok</div>
+          <footer>
       </div>
     </div>
     <script type="text/javascript" src = "controller/controller-client.js"></script>
