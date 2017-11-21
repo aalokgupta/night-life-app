@@ -13,7 +13,7 @@ const TWITTER_API_SECRET = "iJSWlCocDxf4VtJUuoADOhvRE5zAnKi79KC2xTpLURiQ5FQgPS";
 passport.use(new Strategy({
   consumerKey: TWITTER_API_KEY,
   consumerSecret: TWITTER_API_SECRET,
-  callbackURL: "http://127.0.0.1:8080/auth/twitter/callback"
+  callbackURL: "https://mighty-badlands-49422.herokuapp.com/auth/twitter/callback"
 },
 function(token, tokenSecret, profile, cb){
   return cb(null, profile);
