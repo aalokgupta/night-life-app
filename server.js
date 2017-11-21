@@ -85,7 +85,7 @@ app.get('/search/:text', (req, res) => {
 
 
 
-  const port_no = 8080;
+  const port_no = process.env.PORT || 8080;
   app.listen(8080, () => {
     console.log("server started listening at port no "+port_no);
   });

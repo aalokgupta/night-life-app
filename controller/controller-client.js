@@ -39,7 +39,7 @@
 
                         $scope.clickOnJoining = function(searchItem, index){
                           console.log("click on joining buton at  "+index);
-                          var requested_url = "http://127.0.0.1:8080/authenticate";
+                          var requested_url = "/authenticate";
                           // searchItem.counter++;
                           localStorageService.set("searchItems", $scope.searchItems);
                           localStorageService.set("click-on", index);
@@ -97,7 +97,7 @@
 
                         $scope.getSearchResult = function() {
                           if(text_search.value !== ""){
-                            var requested_url = "http://127.0.0.1:8080/search/" + encodeURI(text_search.value);
+                            var requested_url = "/search/" + encodeURI(text_search.value);
                             this.requestAjaxFuntion("GET", requested_url, function(result){
                               console.log("this = "+$scope);
                               $scope.filterSearchResult(result, function(err, res){
